@@ -1,19 +1,15 @@
-/* html {
-    margin: auto;
+
+    /* margin: auto;
     padding: 0;
     box-sizing: border-box;
-  }  */
-   BASE STYLES -----------------------
-   body {
+  } */
+   /* BASE STYLES ----------------------- */
+  body {
     background-image: linear-gradient(120deg, #FFF4D2, #FCC2B2);
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 15px;
     letter-spacing: .5px;
-    display: flex;
-	min-height: 100vh;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+    min-height: 100vh;
   }
   h1 {
     font-size: 2.3rem;
@@ -81,12 +77,6 @@
   #main-article {
     clear: both;
   }
-  .main_container{
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-  }
   p.bottom-left {
     color:white;
     font-size: 15px;
@@ -95,11 +85,6 @@
     bottom: 2px;
     left: 30px;
   }
-img#city_img{
-    width: 500px;
-    height: 500px;
-
-}
   div#main-article div.row img {
     width: 380px;
     height: 200px;
@@ -117,8 +102,7 @@ img#city_img{
     background-color: #DEFCCB;
     width: 30px;
     display: inline-block;
-    margin-left:
-     3px;
+    margin-left: 3px;
   }
   /* Pseudo-classes */
   a:hover {
