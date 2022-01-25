@@ -1,5 +1,4 @@
 getCities();
-
 function getCities(){
     fetch ('http://localhost:3000/cities')
     .then(resp => resp.json())
@@ -31,13 +30,20 @@ cityCaption.innerHTML = cityObj.caption
 const addedBy = document.createElement('p')
 addedBy.innerHTML = `added by ${cityObj.username}`
 const likeCount = document.createElement('p')
+likeCount.id = 'likeP'
 likeCount.innerHTML = `${cityObj.likes} likes`
+
 const commentContainer = document.createElement('div')
 commentContainer.innerHTML = "Comments go here"
 const commentDraftbox = document.createElement('textarea')
 commentDraftbox.innerHTML = "Type comments here"
 const commentForm = document.createElement('form')
 
+document.querySelector('#likeButton').addEventListener('click', () => {
+    cityObj.likes += 1
+    document.querySelector('#likeP').innerHTML = `${cityObj.likes} likes`
+    updateLikes(cityObj)
+}) 
 
 cityInfo.append(cityName, cityPhoto, countryName, cityCaption, addedBy, likeCount, commentContainer, commentDraftbox)
 })
@@ -53,6 +59,7 @@ let cityObj = {
     caption: event.target.caption.value,
     likes: 0
 }
+
 postCity(cityObj) 
 
 function postCity(cityObj){
@@ -66,6 +73,16 @@ body: JSON.stringify(cityObj)
 .then(resp => resp.json())
 .then(data => console.log(data))
 }
-// need to add to submit event 
-
 }}
+function updateLikes(cityObj){
+    fetch(`http://localhost:3000/cities/${cityObj.id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(cityObj)
+    })
+    .then(res => res.json())
+}
+// Add likes and save to db.json
+   
