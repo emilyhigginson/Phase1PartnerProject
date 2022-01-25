@@ -1,8 +1,8 @@
 * {
-  margin: auto;
-  padding: 0;
-  box-sizing: border-box;
-  font-family:Georgia, 'Times New Roman', Times, serif
+margin: auto;
+padding: 0;
+box-sizing: border-box;
+font-family:Georgia, 'Times New Roman', Times, serif
 }
 
 /* BASE STYLES */
@@ -12,14 +12,16 @@ font-size: 15px;
 letter-spacing: .5px;
 min-height: 100vh;
 }
+
 h1 {
 font-size: 2.3rem;
 text-decoration: rgb(29, 28, 26);
 letter-spacing: .2rem;
 margin: 10px;
 }
+
 .container {
-background-color: rgb(188, 236, 248);
+background-color: #f1faee;
 text-align: center;
 margin-left: 90px;
 width: 980px;
@@ -42,22 +44,24 @@ position: fixed;
 z-index: 1; 
 top: 0;
 left: 0;
-background-color: white;
+background-color: #457b9d;
 overflow-x: hidden; 
 overflow-y: scroll;
 padding-top: 20px;
+color: #fff;
 }
-.rightnav{
-  height: 100%; 
-  width: 15%; 
-  position: fixed; 
-  z-index: 1; 
-  top: 0; 
-  right: 0;
-  background-color: white; 
-  overflow-x: scroll; 
-  overflow-y: scroll;
-  padding-top: 20px;
+
+#rightnav{
+height: 100%; 
+width: 15%; 
+position: fixed; 
+z-index: 1; 
+top: 0; 
+right: 0;
+background-color: #457b9d;
+overflow-x: scroll; 
+overflow-y: scroll;
+padding-top: 20px;
 }  
 
 #cities{
@@ -74,15 +78,14 @@ margin-top: 20px;
 text-decoration: none;
 }
 
-li.citiesList::marker {
+/* li.citiesList::marker {
 color:white;
-}
+} */
 
 /* FORM STYLES */
 form {
 width: 500px;
 text-overflow: ellipsis;
-/* text-size-adjust:  */
 display: flex;
 flex-direction: column;
 text-align: center;
@@ -93,67 +96,13 @@ border-bottom-left-radius: 5px;
 border-top-right-radius: 5px;
 margin-bottom: 8px;
 }
+
 footer {
-  position: fixed;
-  width: 100%; 	
-  left: 0; 	
-  bottom: 0; 	
-  background-color: darkblue; 	
-  color: white; 	
-  text-align: center; } 
-
-
-
-/* html {
-    margin: auto;
-    padding: 0;
-    box-sizing: border-box;
-  }  */
-   /* BASE STYLES -----------------------
-   body {
-    font-family: 'Source Sans Pro', sans-serif;
-  font-size: 15px;
-  letter-spacing: .5px;
-  display: block;
-	min-height: 100vh;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-  } 
-  h1 {
-    font-size: 2.3rem;
-    color: rgb(245, 79, 79);
-    text-decoration: rgb(29, 28, 26);
-    letter-spacing: .2rem;
-    margin: 10px; 
-  }
-  .container {
-    background-color: rgb(188, 236, 248);
-    text-align: center;
-    margin-left: 90px;
-    width: 980px;
-    margin: 0 auto;
-    overflow: hidden;
-    font-size: 1.2em;
-    position: relative;
-  } */
-  /* .main_container{
-    position: fixed;
-    display: flex; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } */
-/* img#city_img{
-    width: 400px;
-    height: 400px;
-}
-  
-  /* BASE STYLES */
-  body {
-  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  letter-spacing: .5px;
-  min-height: 100vh;
-  }
- 
+position: fixed;
+width: 100%; 	
+left: 0; 	
+bottom: 0; 	
+background-color: darkblue; 	
+color: white; 	
+text-align: center; 
+} 
