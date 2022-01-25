@@ -1,56 +1,78 @@
 html {
-    margin: auto;
-    padding: 0;
-    box-sizing: border-box;
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
   }  
   
-  BASE STYLES -----------------------
-   body {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 15px;
-    letter-spacing: .5px;
-    min-height: 100vh;
-    }
-
-  h1 {
-    font-size: 2.3rem;
-    text-decoration: rgb(29, 28, 26);
-    letter-spacing: .2rem;
-    margin: 10px;
+  /* BASE STYLES */
+  body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  letter-spacing: .5px;
+  min-height: 100vh;
   }
-  
-  .container {
-    background-color: rgb(188, 236, 248);
-    text-align: center;
-    margin-left: 90px;
-    width: 980px;
-    margin: 0 auto;
-    overflow: hidden;
-    font-size: 1.2em;
-    position: relative;
+
+h1 {
+  font-size: 2.3rem;
+  text-decoration: rgb(29, 28, 26);
+  letter-spacing: .2rem;
+  margin: 10px;
 }
-  }
 
-  /* .main_container{
-    position: fixed;
-    display: flex;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.container {
+  background-color: rgb(188, 236, 248);
+  text-align: center;
+  margin-left: 90px;
+  width: 980px;
+  margin: 0 auto;
+  overflow: hidden;
+  font-size: 1.2em;
+  position: relative;
+}
+
+
+
+/* .main_container{
+  position: fixed;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 } */
-    #city-img{
-    width: 400px;
-    height: 400px;
-    }
 
-  #sidenav {
-    height: 100%; 
-    width: 160px; 
-    position: fixed; 
-    z-index: 1; 
-    top: 0;
-    left: 0;
-    background-color: white;
-    overflow-x: hidden; 
-    padding-top: 20px;
-  }
+#city-img{
+  width: 400px;
+  height: 400px;
+}
+
+#sidenav {
+  height: 100%; 
+  width: 200px; 
+  position: fixed; 
+  z-index: 1; 
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden; 
+  padding-top: 20px;
+}
+
+#cities{
+  padding-left: 30px;
+  margin-right: 35px;
+}
+
+#clickme {
+  background-color: rgb(247, 199, 199);
+  margin-top: 20px;
+}
+
+li.citiesList {
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+li.citiesList::marker {
+  color:white;
+}
+
