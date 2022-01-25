@@ -1,4 +1,5 @@
-getCities()
+
+getCities() 
 
 const citiesUl = document.querySelector('#cities')
 
@@ -12,8 +13,13 @@ function displayCitiesInSideBar(cityArray) {
   cityArray.forEach(cityObj => {
     const cityLi = document.createElement('li')
     cityLi.className = "citiesList"
-    cityLi.textContent = cityObj.country
-    
-    citiesUl.append(cityLi)
+    cityLi.textContent = cityObj.city
+
+    const img = document.createElement('img')
+    img.style.width = '80px'
+    img.style.height = '60px'
+    img.src = cityObj.image
+
+    citiesUl.append(cityLi, img)
   })
 }

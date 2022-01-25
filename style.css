@@ -1,12 +1,13 @@
-html {
-  margin: auto;
-  padding: 0;
-  box-sizing: border-box;
-  }  
+
+  * {
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
   
   /* BASE STYLES */
   body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   font-size: 15px;
   letter-spacing: .5px;
   min-height: 100vh;
@@ -30,8 +31,6 @@ h1 {
   position: relative;
 }
 
-
-
 /* .main_container{
   position: fixed;
   display: flex;
@@ -45,6 +44,7 @@ h1 {
   height: 400px;
 }
 
+/* SIDE NAVIGATION STYLES */
 #sidenav {
   height: 100%; 
   width: 200px; 
