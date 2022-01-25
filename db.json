@@ -1,0 +1,44 @@
+{
+  "cities": [
+    {
+      "id": 1,
+      "country": "Spain",
+      "city":"Madrid",
+      "image": "https://d2xnbd34cn3art.cloudfront.net/files/2018/11/15183319/moving-to-Madrid_S786312625.jpg",
+      "caption": "Picturesque Views of Madrid, Spain",
+      "username": "Julia"
+    },
+    {
+      "id": 2,
+      "country": "Ukraine",
+      "city":"Kiev",
+      "image": "https://tse3.mm.bing.net/th?id=OIP.noUqVjvTjumm8z_76iATVwHaE5&pid=Api&P=0&w=251&h=167",
+      "caption": "Enjoy Ancient Architecture of Kiev, Ukraine",
+      "username": "Julia"
+    },
+    {
+      "id": 3,
+      "country": "France",
+      "city":"Paris",
+      "image": "https://media.istockphoto.com/photos/eiffel-tour-and-paris-cityscape-picture-id1133449890?k=20&m=1133449890&s=612x612&w=0&h=-bA21xKrn_iX-QbEl25QWDUAWhH1Ga-G5Ka6t_g9y6A=",
+      "caption": "Majestic Views of Paris, France",
+      "username": "Julia"
+    },
+    {
+      "id": 4,
+      "country": "United States of America",
+      "city":"New York",
+      "image": "https://tse3.mm.bing.net/th?id=OIP.-C6VN26bXXw9-YIqbh07IAHaEK&pid=Api&P=0&w=282&h=159",
+      "caption": "City that Never Spleeps, New York, USA",
+      "username": "Julia"
+    },
+    {
+      "id": 5,
+      "country": "Republic of Singapore",
+      "city": "Singapore",
+      "image": "http://media.cntraveler.com/photos/568c906d67dc82253d9f81dd/master/pass/most-beautiful-cities-singapore-cr-getty.jpg",
+      "caption": "City of the Future, Singapore, Republic of Singapore",
+      "username": "Julia"
+    }
+  ]
+}
