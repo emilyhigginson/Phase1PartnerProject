@@ -76,3 +76,18 @@ li.citiesList::marker {
   color:white;
 }
 
+/* FORM STYLES */
+form {
+  width: 500px;
+  text-overflow: ellipsis;
+  text-size-adjust: ;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+input {
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-bottom: 8px;
+}
