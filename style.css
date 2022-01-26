@@ -3,11 +3,13 @@
   margin: auto;
   padding: 0;
   box-sizing: border-box;
-  font-family:Georgia, 'Times New Roman', Times, serif
+  /* font-family:Georgia, 'Times New Roman', Times, serif */
   }
   /* BASE STYLES */
   body {
-    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    font-family: 'Modern Antiqua', cursive;
+    font-family: 'Playfair Display SC', serif;
+    /* font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; */
     font-size: 15px;
     letter-spacing: .5px;
     min-height: 100vh;
@@ -29,12 +31,10 @@
     position: relative;
   }
   #city-img {
-    width: 500px;
-    height: 600px;
+    width: 300px;
+    height: 400px;
   }
-  #city-img:hover {
-    transform: scale(0.9);
-  }
+
   /* SIDE NAVIGATION STYLES */
   .sidenav {
     height: 100%;
@@ -92,15 +92,7 @@
     width: 75%;
     font-style: italic;
   }
-   /* #footer {
-    position: fixed;
-    width: 100%;  
-    left: 0;  
-    bottom: 0;  
-    background-color: darkblue;  
-    color: white;  
-    text-align: center;  */
-   /* } */
+
   #primary-footer {
     position: absolute;
     bottom: 0;
@@ -109,9 +101,14 @@
     /* background-color: #FAE5E5; */
     color:darkblue;
     text-align: center;
-    font-size: .9rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: .8rem;
+
   }
   #likeButton {
    border-radius: 5px;
-  
+  }
+
+  #sidebarImage{
+    cursor: pointer;
   }

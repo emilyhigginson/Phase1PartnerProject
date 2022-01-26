@@ -1,5 +1,6 @@
 // CALLING FUNCTIONS
 getCities()
+getComments()
 // DOM ELEMENTS
 const cities = document.querySelector('#cities')
 const cityInfo = document.querySelector('#cityInfo')
@@ -9,6 +10,11 @@ function getCities(){
   fetch ('http://localhost:3000/cities')
   .then(response => response.json())
   .then(data => data.forEach(cityBar))
+}
+function getComments(){
+	fetch ('http://localhost:3000/comments')
+	.then(response => response.json())
+	.then(data => console.log(data))
 }
 function postCity(cityObj){
   fetch ('http://localhost:3000/cities', {
@@ -35,9 +41,19 @@ function cityBar(cityObj) {
   const cityName = document.createElement('ol');
   cityName.innerText = cityObj.city
   const img = document.createElement('img')
+
+  img.id = "sidebarImage"
   img.style.width = '80px'
   img.style.height = '60px'
   img.src = cityObj.image
+
+	// cityName.addEventListener('mouseover', function (e) {
+	// 	e.target.innerText = "Find out more!";
+	// 		setTimeout(function() {
+	// 			e.target.innerText = cityObj.city;
+	// 		}, 500);
+	// }, false);
+
   cities.append(cityName, img)
 
 // EVENTLISTENER TO DISPLAY CITY INFO ON MAIN PAGE AFTER CLICKED ON SIDEBAR
@@ -72,10 +88,20 @@ function cityBar(cityObj) {
     })
 
     const commentContainer = document.createElement('div')
-    commentContainer.textContent = 'Comments go here'
+    commentContainer.textContent = 'placeholder'
+
+		const commentBtn = document.createElement('button')
+		commentBtn.textContent = 'add comment'
     // const commentForm = document.createElement('form')
-  cityInfo.replaceChildren(cityName, cityPhoto, countryName, cityCaption, addedBy, likeCount, commentContainer, commentDraftbox)
+  cityInfo.replaceChildren(cityName, cityPhoto, countryName, cityCaption, addedBy, likeCount, commentContainer,  commentDraftbox, commentBtn)
+
+	//COMMENTS DISPLAY ON CONTAINER 
+
+	img.addEventListener('click', function() {
+	
 })
+	
+	
 // FORM SUBMIT
 newImage.addEventListener('submit', addCity)
 function addCity(event){
@@ -91,4 +117,5 @@ function addCity(event){
     cityBar(cityObj)
     postCity(cityObj)
   }
+})
 }

@@ -45,5 +45,12 @@
       "username": "Julia",
       "likes": 0
     }
+  ],
+  "comments": [
+      {
+      "id": 1,
+      "cityId": 1,
+      "content": "I love Madrid! Such a fun city! - Emily"
+      }
   ]
 }
