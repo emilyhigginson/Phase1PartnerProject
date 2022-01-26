@@ -47,6 +47,8 @@ function cityBar(cityObj) {
   img.style.height = '60px'
   img.src = cityObj.image
 
+	console.log("hello");
+
 	// cityName.addEventListener('mouseover', function (e) {
 	// 	e.target.innerText = "Find out more!";
 	// 		setTimeout(function() {
