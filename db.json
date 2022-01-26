@@ -7,7 +7,7 @@
       "image": "https://d2xnbd34cn3art.cloudfront.net/files/2018/11/15183319/moving-to-Madrid_S786312625.jpg",
       "caption": "Views from Madrid!",
       "username": "Emily",
-      "likes": 5
+      "likes": 12
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "image": "https://tse3.mm.bing.net/th?id=OIP.noUqVjvTjumm8z_76iATVwHaE5&pid=Api&P=0&w=251&h=167",
       "caption": "Enjoy Ancient Architecture of Kiev, Ukraine",
       "username": "Julia",
-      "likes": 1
+      "likes": 4
     },
     {
       "id": 3,
@@ -46,11 +46,27 @@
       "likes": 0
     }
   ],
+
   "comments": [
     {
-      "id": 1,
-      "cityId": 1,
-      "content": "I love Madrid! Such a fun city! - Emily"
-    }
+     "id": 1,
+     "content": "some comment0",
+     "cityId": 4 
+    },
+    {
+      "id": 2,
+      "content": "some comment1",
+      "cityId": 4 
+     },
+     {
+      "id": 3,
+      "content": "some comment2",
+      "cityId": 3 
+     },
+     {
+      "id": 4,
+      "content": "some comment3",
+      "cityId": 1
+     }
   ]
 }
