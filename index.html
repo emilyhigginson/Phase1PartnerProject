@@ -1,50 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exploring the World</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Modern+Antiqua&family=Playfair+Display+SC&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-</head>
-<!-- Main content -->
-<body class="container">
-  <header id="main-header">
-  <h1> Exploring the World </h1>
-  </header>
-<main>
-  <img id="city-img" src="https://i.pinimg.com/564x/4e/18/d2/4e18d23bed0eca70732d9c9773d7748b.jpg" alt="City View" height=100px />
-  <div id="cityInfo"> </div>
-  <form id="home_screen"></form>
-  <button id="likeButton" class= "hidden" style="width:50px; height:30px">💗</button>
-  <div id= "commentContainer" ></div>
-<div class="sidenav">
-  <span id="clickme"></span>
-  <ul id="cities"> </ul>
-</div>
-<div class="rightnav" id="cityForm">
-  <form id="new-image">
-    <h4>Add Your Travel Experience!</h4>
-    <label for="city">City: </label>
-    <input type="text" name="city" placeholder ="Enter new city here" id="new-city">
-    <label for="country">Country: </label>
-    <input type="text" name="country" placeholder ="Enter new country here" id="new-country">
-    <label for="image">Image URL: </label>
-    <input type="text" name="image" placeholder ="Enter new image here" id="new-image">
-    <label for="caption"> Caption: </label>
-    <input type="text" name="caption" placeholder ="Enter new caption here" id="new-caption">
-    <label for="username"> Added by: </label>
-    <input type="text" name="username" placeholder ="Enter your name here" id="new-name">
-    <input type="submit" value="Submit">
-  </form>
-  <footer id="primary-footer">
-    <span><small>&copy; World Project Emily & Julia FIS 01102022</small></span>
-  </footer>
-</div>
-</main>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring the World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Modern+Antiqua&family=Playfair+Display+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <!-- Main content -->
+  <body class="container">
+    <header id="main-header">
+    <h1> Exploring the World </h1>
+    </header>
+
+    <main>
+      <img class="city-img" src="https://i.pinimg.com/564x/4e/18/d2/4e18d23bed0eca70732d9c9773d7748b.jpg" alt="City View"/>
+        <div class="overlay">
+          <div class="text">Welcome</div>
+        </div>
+
+      <div id="cityInfo"> </div>
+      <form id="home_screen"></form>
+
+      <button id="likeButton" style="width:50px; height:30px">💗</button>
+      <div id= "commentContainer" ></div>
+
+      <div class="sidenav">
+        <span id="clickme"></span>
+        <ul id="cities"> </ul>
+      </div>
+
+      <div class="rightnav" id="cityForm">
+        <form id="new-image">
+          <h4>Add Your Travel Experience!</h4>
+          <label for="city">City: </label>
+          <input type="text" name="city" placeholder ="Enter new city here" id="new-city">
+          <label for="country">Country: </label>
+          <input type="text" name="country" placeholder ="Enter new country here" id="new-country">
+          <label for="image">Image URL: </label>
+          <input type="text" name="image" placeholder ="Enter new image here" id="new-image">
+          <label for="caption"> Caption: </label>
+          <input type="text" name="caption" placeholder ="Enter new caption here" id="new-caption">
+          <label for="username"> Added by: </label>
+          <input type="text" name="username" placeholder ="Enter your name here" id="new-name">
+          <input type="submit" value="Submit">
+        </form>
+
+        <footer id="primary-footer">
+          <span><small>&copy; World Project Emily & Julia FIS 01102022</small></span>
+        </footer> 
+      </div>
+
+    </main>
+  </body>
+</html>
 <!-- <footer>   <p>Flatiron 2022 Julia & Emily</p> </footer> -->

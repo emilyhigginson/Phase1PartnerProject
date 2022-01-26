@@ -14,12 +14,14 @@
     letter-spacing: .5px;
     min-height: 100vh;
   }
+
   h1 {
     font-size: 2.3rem;
     text-decoration: rgb(29, 28, 26);
     letter-spacing: .2rem;
     margin: 10px;
   }
+
   .container {
     background-color: #F1FAEE;
     text-align: center;
@@ -30,9 +32,39 @@
     font-size: 1.2em;
     position: relative;
   }
-  #city-img {
+
+  .city-img {
     width: 300px;
     height: 400px;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+  
+  .container:hover .overlay {
+    opacity: 1;
+  }
+
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
 
   /* SIDE NAVIGATION STYLES */
@@ -49,6 +81,7 @@
     padding-top: 20px;
     color: #fff;
   }
+
   .rightnav{
     height: 100%;
     width: 15%;
@@ -62,12 +95,15 @@
     padding-top: 20px;
     color: #fff;
   }  
+
   #cities{
     padding: 35px;
   }
+
   #clickme {
     margin-top: 20px;
   }
+
   li.citiesList {
     margin-top: 20px;
     text-decoration: none;
@@ -76,6 +112,7 @@
   h4 {
     margin-bottom: 10px;;
   }
+
   form {
     width: 100%;
     text-overflow: ellipsis;
@@ -83,6 +120,7 @@
     flex-direction: column;
     text-align: center;
   }
+
   input {
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
