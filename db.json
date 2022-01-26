@@ -7,7 +7,7 @@
       "image": "https://d2xnbd34cn3art.cloudfront.net/files/2018/11/15183319/moving-to-Madrid_S786312625.jpg",
       "caption": "Views from Madrid!",
       "username": "Emily",
-      "likes": 3
+      "likes": 5
     },
     {
       "id": 2,
@@ -47,10 +47,10 @@
     }
   ],
   "comments": [
-      {
+    {
       "id": 1,
       "cityId": 1,
       "content": "I love Madrid! Such a fun city! - Emily"
-      }
+    }
   ]
 }

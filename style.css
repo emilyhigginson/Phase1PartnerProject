@@ -38,8 +38,8 @@
     height: 400px;
   }
 
-  .overlay {
-    position: absolute;
+  /* .overlay {
+    position: relative;
     top: 0;
     bottom: 0;
     left: 0;
@@ -51,12 +51,12 @@
     background-color: #008CBA;
   }
   
-  .container:hover .overlay {
+  #main-img:hover .overlay {
     opacity: 1;
   }
 
   .text {
-    color: white;
+    color: red;
     font-size: 20px;
     position: absolute;
     top: 50%;
@@ -65,7 +65,7 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-  }
+  } */
 
   /* SIDE NAVIGATION STYLES */
   .sidenav {
