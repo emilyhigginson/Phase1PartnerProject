@@ -1,5 +1,7 @@
 // CALLING FUNCTIONS
 getCities()
+addComment()
+getComments()
 // DOM ELEMENTS
 const cities = document.querySelector('#cities')
 const cityInfo = document.querySelector('#cityInfo')
@@ -11,7 +13,12 @@ function getCities(){
   .then(response => response.json())
   .then(data => data.forEach(cityObj => cityBar(cityObj)))
 }
-
+function getComments(){
+  fetch ('http://localhost:3000/comments')
+  .then(response => response.json())
+  // .then(data => console.log(data))
+  .then(data => data.forEach(commentObj => commentBar(commentObj)))
+}
 function postCity(cityObj){
   fetch ('http://localhost:3000/cities', {
     method: 'POST',
@@ -34,6 +41,17 @@ function updateLikes(cityObj){
   })
   .then(response => response.json())
 }
+function postComment(commentObj){
+  fetch ('http://localhost:3000/comments', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(commentObj)
+    })
+  .then(response => response.json())
+  // .then(data => console.log(data))
+  }
 
 // FUNCTION TO DISPLAY IMG ON SIDE BAR
 function cityBar(cityObj) {
@@ -81,39 +99,7 @@ function cityBar(cityObj) {
       updateLikes(cityObj);
     })
 
-    const commentContainer = document.createElement('div')
-    commentContainer.textContent = 'Comments go here'
-
-    const commentDraftbox = document.createElement('textarea')
-    commentDraftbox.textContent = ''
-    commentDraftbox.addEventListener('keydown', (e) => {
-      shiftPressed = false;
-      enterPressed = false;
-      if (e.shiftKey) shiftPressed = true;
-      if (e.keyCode == 13) {
-        e.preventDefault();
-        enterPressed=true;
-      }
-    })
-
-    commentDraftbox.addEventListener('keyup', (e) => {
-      if (e.shiftKey || e.keyCode == 13) {
-        if (!enterPressed) shiftPressed = false;
-        else {
-          if(!shiftPressed) {
-            let input = commentDraftbox.value
-            e.preventDefault();
-            commentContainer.textContent = input
-            commentDraftbox.value = "";
-            enterPressed = false;
-          } else {
-            commentDraftbox += "\n";
-            enterPressed = false, shiftPressed = false;
-          }
-        }
-      }
-    })
-  cityInfo.replaceChildren(cityName, cityPhoto, countryName, cityCaption, addedBy, likeCount, likeButton, commentContainer, commentDraftbox)
+  cityInfo.replaceChildren(cityName, cityPhoto, countryName, cityCaption, addedBy, likeCount, likeButton)
 })
 
 }
@@ -134,9 +120,24 @@ function addCity(event){
   }
 
 
-// function loadingPage() {
-//   document.onload = alert("Continue..");
-// }
+function addComment(){
+const commentForm = document.getElementById('commentForm')
+commentForm.addEventListener('submit', (event) =>{
+event.preventDefault()
 
+let commentObj = {
+content: event.target.newComment.value
+}
+postComment(commentObj)
 
-loadingPage();
+})
+}
+const commentSection = document.getElementById('commentBar')
+commentSection.append()
+
+function commentBar(commentObj) {
+  const newComment = document.createElement('ul');
+  newComment.innerText = commentObj.content
+  newComment.id = 'newComment'
+  commentSection.append(newComment)
+}

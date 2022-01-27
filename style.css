@@ -30,7 +30,20 @@
   p {
     margin-bottom: 10px;
   }
+  #newComment {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    width: 35%;
+  } 
+  #adviceButton{
+    width: 20%;
+    background-color: #457B9D;
+    color: white; 
+    border-color: white;
+    border-radius: 5px;
+    font-family: 'Playfair Display SC', serif;
 
+  }
   .container {
     background-color: #F1FAEE;
     text-align: center;
