@@ -1,23 +1,14 @@
 // CALLING FUNCTIONS
 getCities()
-addComment()
-getComments()
 // DOM ELEMENTS
 const cities = document.querySelector('#cities')
 const cityInfo = document.querySelector('#cityInfo')
 const newImage = document.querySelector('#new-image')
-
 // METHODS
 function getCities(){
-  fetch ('http://localhost:3000/cities?_embed=comments')
+  fetch ('http://localhost:3000/cities')
   .then(response => response.json())
-  .then(data => data.forEach(cityObj => cityBar(cityObj)))
-}
-function getComments(){
-  fetch ('http://localhost:3000/comments')
-  .then(response => response.json())
-  // .then(data => console.log(data))
-  .then(data => data.forEach(commentObj => commentBar(commentObj)))
+  .then(data => data.forEach(cityBar))
 }
 function postCity(cityObj){
   fetch ('http://localhost:3000/cities', {
@@ -28,9 +19,7 @@ function postCity(cityObj){
     body: JSON.stringify(cityObj)
     })
   .then(response => response.json())
-  .then(data => console.log(data))
   }
-
 function updateLikes(cityObj){
   fetch (`http://localhost:3000/cities/${cityObj.id}`, {
     method: 'PATCH',
@@ -41,28 +30,17 @@ function updateLikes(cityObj){
   })
   .then(response => response.json())
 }
-function postComment(commentObj){
-  fetch ('http://localhost:3000/comments', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(commentObj)
-    })
-  .then(response => response.json())
-  // .then(data => console.log(data))
-  }
-
 // FUNCTION TO DISPLAY IMG ON SIDE BAR
 function cityBar(cityObj) {
   const cityName = document.createElement('ol');
   cityName.innerText = cityObj.city
   const img = document.createElement('img')
+
+  img.id = "sidebarImage"
   img.style.width = '80px'
   img.style.height = '60px'
   img.src = cityObj.image
-  img.title = "Find Out More"
-  
+
   cities.append(cityName, img)
 
 // EVENTLISTENER TO DISPLAY CITY INFO ON MAIN PAGE AFTER CLICKED ON SIDEBAR
@@ -74,6 +52,7 @@ function cityBar(cityObj) {
     cityPhoto.style.width = '400px'
     cityPhoto.style.width = '400px'
     cityPhoto.src = cityObj.image
+	cityPhoto.title = "Find out more!"
 
     const countryName = document.createElement('h3')
     countryName.textContent = cityObj.country
@@ -83,26 +62,27 @@ function cityBar(cityObj) {
 
     const addedBy = document.createElement('p')
     addedBy.innerHTML = `added by ${cityObj.username}`
-    addedBy.style.fontSize = '13px'
 
-    const likeButton = document.createElement('button')
-    likeButton.innerText = "💗"
-    likeButton.type = 'button'
+		const commentForm = document.createElement('form')
+		// commentForm.setAttribute("method", "post");
 
-    const likeCount = document.createElement('p')
-    likeCount.id = 'likeP'
-    likeCount.textContent = `${cityObj.likes} likes`
-
-    likeButton.addEventListener('click', () =>{
-      cityObj.likes += 1
-      likeCount.innerHTML = `${cityObj.likes} 💗 likes`
-      updateLikes(cityObj);
+        const commentDraftbox = document.createElement('textarea')
+        commentDraftbox.textContent = 'Type comments here'
+    
+        const likeCount = document.createElement('p')
+        likeCount.id = 'likeP'
+        likeCount.textContent = `${cityObj.likes} likes`
+        document.querySelector('#likeButton').addEventListener('click', () =>{
+          cityObj.likes += 1
+          likeCount.innerHTML = cityObj.likes
+          updateLikes(cityObj)
+        })
+    
+        const commentContainer = document.createElement('div')
+        commentContainer.textContent = 'Comments go here'
+        // const commentForm = document.createElement('form')
+      cityInfo.replaceChildren(cityName, cityPhoto, countryName, cityCaption, addedBy, likeCount, commentContainer, commentDraftbox)
     })
-
-  cityInfo.replaceChildren(cityName, cityPhoto, countryName, cityCaption, addedBy, likeCount, likeButton)
-})
-
-}
 
 // FORM SUBMIT
 newImage.addEventListener('submit', addCity)
@@ -113,31 +93,10 @@ function addCity(event){
       city: event.target.city.value,
       image: event.target.image.value,
       caption: event.target.caption.value,
+      username: event.target.username.value,
       likes: 0
     }
-    //console.log(cityObj);
+    cityBar(cityObj)
     postCity(cityObj)
   }
-
-
-function addComment(){
-const commentForm = document.getElementById('commentForm')
-commentForm.addEventListener('submit', (event) =>{
-event.preventDefault()
-
-let commentObj = {
-content: event.target.newComment.value
-}
-postComment(commentObj)
-
-})
-}
-const commentSection = document.getElementById('commentBar')
-commentSection.append()
-
-function commentBar(commentObj) {
-  const newComment = document.createElement('ul');
-  newComment.innerText = commentObj.content
-  newComment.id = 'newComment'
-  commentSection.append(newComment)
 }
