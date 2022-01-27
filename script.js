@@ -74,6 +74,7 @@ function cityBar(cityObj) {
     cityPhoto.style.width = '400px'
     cityPhoto.style.width = '400px'
     cityPhoto.src = cityObj.image
+    cityPhoto.className = "animation"
 
     const countryName = document.createElement('h3')
     countryName.textContent = cityObj.country
