@@ -7,7 +7,14 @@
       "image": "https://d2xnbd34cn3art.cloudfront.net/files/2018/11/15183319/moving-to-Madrid_S786312625.jpg",
       "caption": "Views from Madrid!",
       "username": "Emily",
-      "likes": 12
+      "likes": 13,
+      "comments": [
+        {
+          "id": 4,
+          "content": "some comment3",
+          "cityId": 1
+        }
+      ]
     },
     {
       "id": 2,
@@ -16,7 +23,8 @@
       "image": "https://tse3.mm.bing.net/th?id=OIP.noUqVjvTjumm8z_76iATVwHaE5&pid=Api&P=0&w=251&h=167",
       "caption": "Enjoy Ancient Architecture of Kiev, Ukraine",
       "username": "Julia",
-      "likes": 4
+      "likes": 5,
+      "comments": []
     },
     {
       "id": 3,
@@ -25,7 +33,14 @@
       "image": "https://media.istockphoto.com/photos/eiffel-tour-and-paris-cityscape-picture-id1133449890?k=20&m=1133449890&s=612x612&w=0&h=-bA21xKrn_iX-QbEl25QWDUAWhH1Ga-G5Ka6t_g9y6A=",
       "caption": "Majestic Views of Paris, France",
       "username": "Julia",
-      "likes": 1
+      "likes": 5,
+      "comments": [
+        {
+          "id": 3,
+          "content": "some comment2",
+          "cityId": 3
+        }
+      ]
     },
     {
       "id": 4,
@@ -34,7 +49,19 @@
       "image": "https://tse3.mm.bing.net/th?id=OIP.-C6VN26bXXw9-YIqbh07IAHaEK&pid=Api&P=0&w=282&h=159",
       "caption": "City that Never Sleeps, New York, USA",
       "username": "Julia",
-      "likes": 2
+      "likes": 5,
+      "comments": [
+        {
+          "id": 1,
+          "content": "some comment0",
+          "cityId": 4
+        },
+        {
+          "id": 2,
+          "content": "some comment1",
+          "cityId": 4
+        }
+      ]
     },
     {
       "id": 5,
@@ -43,30 +70,30 @@
       "image": "http://media.cntraveler.com/photos/568c906d67dc82253d9f81dd/master/pass/most-beautiful-cities-singapore-cr-getty.jpg",
       "caption": "City of the Future, Singapore, Republic of Singapore",
       "username": "Julia",
-      "likes": 0
+      "likes": 1,
+      "comments": []
     }
   ],
-
   "comments": [
     {
-     "id": 1,
-     "content": "some comment0",
-     "cityId": 4 
+      "id": 1,
+      "content": "some comment0",
+      "cityId": 4
     },
     {
       "id": 2,
       "content": "some comment1",
-      "cityId": 4 
-     },
-     {
+      "cityId": 4
+    },
+    {
       "id": 3,
       "content": "some comment2",
-      "cityId": 3 
-     },
-     {
+      "cityId": 3
+    },
+    {
       "id": 4,
       "content": "some comment3",
       "cityId": 1
-     }
+    }
   ]
 }
