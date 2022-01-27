@@ -22,6 +22,11 @@
     margin: 10px;
   }
 
+  h4 {
+    margin-bottom: 10px;
+    font-weight: lighter;
+  }
+
   p {
     margin-bottom: 10px;
   }
@@ -38,8 +43,9 @@
   }
 
   .city-img {
-    width: 300px;
-    height: 400px;
+    width: 400px;
+    height: 600px;
+    margin-top: 60px;
   }
 
 
@@ -83,10 +89,6 @@
   li.citiesList {
     margin-top: 20px;
     text-decoration: none;
-  }
-  /* FORM STYLES */
-  h4 {
-    margin-bottom: 10px;;
   }
 
   form {

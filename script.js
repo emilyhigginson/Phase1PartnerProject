@@ -68,16 +68,16 @@ function cityBar(cityObj) {
     addedBy.style.fontSize = '13px'
 
     const likeButton = document.createElement('button')
-    likeButton.innerText = "💗 likes"
+    likeButton.innerText = "💗"
     likeButton.type = 'button'
 
     const likeCount = document.createElement('p')
     likeCount.id = 'likeP'
-    likeCount.textContent = `${cityObj.likes} 💗 likes`
+    likeCount.textContent = `${cityObj.likes} likes`
 
     likeButton.addEventListener('click', () =>{
       cityObj.likes += 1
-      likeCount.innerHTML = `${cityObj.likes} likes`
+      likeCount.innerHTML = `${cityObj.likes} 💗 likes`
       updateLikes(cityObj);
     })
 
@@ -95,7 +95,8 @@ function cityBar(cityObj) {
         enterPressed=true;
       }
     })
-    commentDraftbox.addEventListener('keyup', function (e) {
+
+    commentDraftbox.addEventListener('keyup', (e) => {
       if (e.shiftKey || e.keyCode == 13) {
         if (!enterPressed) shiftPressed = false;
         else {
@@ -110,10 +111,8 @@ function cityBar(cityObj) {
             enterPressed = false, shiftPressed = false;
           }
         }
-    }
-
+      }
     })
-   
   cityInfo.replaceChildren(cityName, cityPhoto, countryName, cityCaption, addedBy, likeCount, likeButton, commentContainer, commentDraftbox)
 })
 
@@ -133,3 +132,11 @@ function addCity(event){
     //console.log(cityObj);
     postCity(cityObj)
   }
+
+
+// function loadingPage() {
+//   document.onload = alert("Continue..");
+// }
+
+
+loadingPage();
