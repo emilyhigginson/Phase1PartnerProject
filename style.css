@@ -3,13 +3,12 @@
   margin: auto;
   padding: 0;
   box-sizing: border-box;
-  /* font-family:Georgia, 'Times New Roman', Times, serif */
   }
+
   /* BASE STYLES */
   body {
     font-family: 'Modern Antiqua', cursive;
     font-family: 'Playfair Display SC', serif;
-    /* font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; */
     font-size: 15px;
     letter-spacing: .5px;
     min-height: 100vh;
@@ -17,7 +16,7 @@
 
   h1 {
     font-size: 2.3rem;
-    text-decoration: rgb(29, 28, 26);
+    color: rgb(38, 112, 38);
     letter-spacing: .2rem;
     margin: 10px;
   }
@@ -30,22 +29,7 @@
   p {
     margin-bottom: 10px;
   }
-  
-  #newComment {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 14px;
-    width: 35%;
-  } 
 
-  #adviceButton{
-    width: 20%;
-    background-color: #457B9D;
-    color: white; 
-    border-color: white;
-    border-radius: 5px;
-    font-family: 'Playfair Display SC', serif;
-
-  }
   .container {
     background-color: #F1FAEE;
     text-align: center;
@@ -57,12 +41,47 @@
     position: relative;
   }
 
+/* COMMENTS STYLES */
+  #commentBar {
+    color: #ec521a;
+  }
+
+  #newCommentText {
+    font-family: 'Outfit', sans-serif, 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    width: 35%;
+    color: black;
+    margin-top: 10px;
+    letter-spacing: 1px;
+  } 
+ 
+  #newComment {
+    width: 20%;
+  }
+
+  .hr {
+    width: 40%;
+    margin-top: 10px;
+    size: 5px;
+    border-style: solid;
+    border-color: #daa055
+  } 
+
+  #adviceButton{
+    width: 20%;
+    background-color: #457B9D;
+    color: white; 
+    border-color: white;
+    border-radius: 5px;
+    font-family: 'Playfair Display SC', serif;
+  }
+
   .city-img {
     width: 400px;
     height: 500px;
     margin-bottom: 10px;
   }
-
 
   /* SIDE NAVIGATION STYLES */
   .sidenav {
@@ -87,8 +106,6 @@
     top: 0;
     right: 0;
     background-color: #457B9D;
-    /* overflow-x: scroll;  */
-    /* overflow-y: scroll; */
     padding-top: 20px;
     color: #fff;
   }  
@@ -114,7 +131,7 @@
       transform: scale(1, 1);
     }
   }
-  
+
   li.citiesList {
     margin-top: 20px;
     text-decoration: none;
@@ -143,13 +160,13 @@
     bottom: 0;
     width: 100%;
     height: 20px;
-    /* background-color: #FAE5E5; */
     color:darkblue;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-size: .8rem;
 
   }
+
   #likeButton {
    border-radius: 5px;
   }

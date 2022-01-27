@@ -138,7 +138,9 @@ commentSection.append()
 
 function commentBar(commentObj) {
   const newComment = document.createElement('ul');
+  const hr = document.createElement('hr')
+  hr.className = "hr"
   newComment.innerText = commentObj.content
-  newComment.id = 'newComment'
-  commentSection.append(newComment)
+  newComment.id = 'newCommentText'
+  commentSection.append(newComment, hr)
 }
