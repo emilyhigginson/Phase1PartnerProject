@@ -67,20 +67,17 @@ function cityBar(cityObj) {
     addedBy.innerHTML = `added by ${cityObj.username}`
     addedBy.style.fontSize = '13px'
 
-    
-
     const likeButton = document.createElement('button')
-    likeButton.innerText = "💗"
+    likeButton.innerText = "💗 likes"
     likeButton.type = 'button'
 
     const likeCount = document.createElement('p')
     likeCount.id = 'likeP'
-    likeCount.textContent = `${cityObj.likes} likes`
+    likeCount.textContent = `${cityObj.likes} 💗 likes`
 
-    
     likeButton.addEventListener('click', () =>{
       cityObj.likes += 1
-      likeCount.innerHTML = cityObj.likes
+      likeCount.innerHTML = `${cityObj.likes} likes`
       updateLikes(cityObj);
     })
 
@@ -88,17 +85,36 @@ function cityBar(cityObj) {
     commentContainer.textContent = 'Comments go here'
 
     const commentDraftbox = document.createElement('textarea')
-    commentDraftbox.placeholder = 'Type comments here'
+    commentDraftbox.textContent = ''
+    commentDraftbox.addEventListener('keydown', (e) => {
+      shiftPressed = false;
+      enterPressed = false;
+      if (e.shiftKey) shiftPressed = true;
+      if (e.keyCode == 13) {
+        e.preventDefault();
+        enterPressed=true;
+      }
+    })
+    commentDraftbox.addEventListener('keyup', function (e) {
+      if (e.shiftKey || e.keyCode == 13) {
+        if (!enterPressed) shiftPressed = false;
+        else {
+          if(!shiftPressed) {
+            let input = commentDraftbox.value
+            e.preventDefault();
+            commentContainer.textContent = input
+            commentDraftbox.value = "";
+            enterPressed = false;
+          } else {
+            commentDraftbox += "\n";
+            enterPressed = false, shiftPressed = false;
+          }
+        }
+    }
 
-    const commentSubmit = document.createElement('button')
-    commentSubmit.innerText = "add comment"
-
-    commentSubmit.addEventListener('submit', (event) => {
-      event.preventDefault()
-      
-    
-    // const commentForm = document.createElement('form')
-  cityInfo.replaceChildren(cityName, cityPhoto, countryName, cityCaption, addedBy, likeCount, likeButton,  commentContainer, commentDraftbox, commentSubmit)
+    })
+   
+  cityInfo.replaceChildren(cityName, cityPhoto, countryName, cityCaption, addedBy, likeCount, likeButton, commentContainer, commentDraftbox)
 })
 
 }
@@ -114,7 +130,6 @@ function addCity(event){
       caption: event.target.caption.value,
       likes: 0
     }
-    
     //console.log(cityObj);
     postCity(cityObj)
   }
