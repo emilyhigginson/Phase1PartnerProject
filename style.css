@@ -107,9 +107,13 @@
     right: 0;
     background-color: #457B9D;
     padding-top: 20px;
-    color: #fff;
-  }  
-
+    color: white;
+  } 
+/*    
+  input{
+    background-color: #f0f3f2
+  }
+   */
   #cities{
     padding: 35px;
   }
@@ -164,7 +168,6 @@
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-size: .8rem;
-
   }
 
   #likeButton {

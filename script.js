@@ -52,13 +52,22 @@ function postComment(commentObj){
   .then(response => response.json())
   // .then(data => console.log(data))
   }
-
+  function deleteComment(id) {
+    fetch(`http://localhost:3000/comments/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+  }
 // FUNCTION TO DISPLAY IMG ON SIDE BAR
 function cityBar(cityObj) {
   const cityName = document.createElement('ol');
   cityName.innerText = cityObj.city
   const img = document.createElement('img')
   img.id = "sidebarImage",
+  img.className = "animation"
   img.style.width = '80px'
   img.style.height = '60px'
   img.src = cityObj.image
@@ -103,7 +112,6 @@ function cityBar(cityObj) {
 
   cityInfo.replaceChildren(cityName, cityPhoto, countryName, cityCaption, addedBy, likeCount, likeButton)
 })
-
 }
 
 // FORM SUBMIT
@@ -122,27 +130,37 @@ function addCity(event){
     cityBar(cityObj)
   }
 
-
 function addComment(){
-const commentForm = document.getElementById('commentForm')
-commentForm.addEventListener('submit', (event) =>{
-event.preventDefault()
+  const commentForm = document.getElementById('commentForm')
+  commentForm.addEventListener('submit', (event) =>{
+  event.preventDefault()
 
-let commentObj = {
-content: event.target.newComment.value
+  let commentObj = {
+    content: event.target.newComment.value
+  }
+  postComment(commentObj)
+  })
 }
-postComment(commentObj)
-
-})
-}
-const commentSection = document.getElementById('commentBar')
-commentSection.append()
+  const commentSection = document.getElementById('commentBar')
+  commentSection.append()
 
 function commentBar(commentObj) {
   const newComment = document.createElement('ul');
+  const deleteButton = document.createElement('button');
+  deleteButton.innerText = "Delete"
+  deleteButton.style.backgroundColor = "#457B9D"
+  deleteButton.style.color = "white"
+
+  deleteButton.addEventListener('click', () => {
+  newComment.remove()
+  deleteButton.remove()
+  hr.remove()
+  deleteComment(commentObj.id)  
+  })
+
   const hr = document.createElement('hr')
   hr.className = "hr"
   newComment.innerText = commentObj.content
   newComment.id = 'newCommentText'
-  commentSection.append(newComment, hr)
+  commentSection.append(newComment, deleteButton, hr)
 }
