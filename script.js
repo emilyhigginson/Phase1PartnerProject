@@ -58,6 +58,7 @@ function cityBar(cityObj) {
   const cityName = document.createElement('ol');
   cityName.innerText = cityObj.city
   const img = document.createElement('img')
+  img.id = "sidebarImage",
   img.style.width = '80px'
   img.style.height = '60px'
   img.src = cityObj.image
@@ -118,6 +119,7 @@ function addCity(event){
     }
     //console.log(cityObj);
     postCity(cityObj)
+    cityBar(cityObj)
   }
 
 
