@@ -1,4 +1,4 @@
-// CALLING FUNCTIONS
+  // CALLING FUNCTIONS
 getCities()
 addComment()
 getComments()
@@ -19,6 +19,7 @@ function getComments(){
   // .then(data => console.log(data))
   .then(data => data.forEach(commentObj => commentBar(commentObj)))
 }
+
 function postCity(cityObj){
   fetch ('http://localhost:3000/cities', {
     method: 'POST',
@@ -41,6 +42,7 @@ function updateLikes(cityObj){
   })
   .then(response => response.json())
 }
+
 function postComment(commentObj){
   fetch ('http://localhost:3000/comments', {
     method: 'POST',
@@ -50,7 +52,6 @@ function postComment(commentObj){
     body: JSON.stringify(commentObj)
     })
   .then(response => response.json())
-  // .then(data => console.log(data))
   }
   function deleteComment(id) {
     fetch(`http://localhost:3000/comments/${id}`, {
@@ -134,11 +135,11 @@ function addComment(){
   const commentForm = document.getElementById('commentForm')
   commentForm.addEventListener('submit', (event) =>{
   event.preventDefault()
-
   let commentObj = {
     content: event.target.newComment.value
   }
   postComment(commentObj)
+  commentBar(commentObj)
   })
 }
   const commentSection = document.getElementById('commentBar')
