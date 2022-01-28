@@ -124,6 +124,7 @@ function addCity(event){
       city: event.target.city.value,
       image: event.target.image.value,
       caption: event.target.caption.value,
+      username: event.target.username.value,
       likes: 0
     }
     //console.log(cityObj);
